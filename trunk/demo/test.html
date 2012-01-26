@@ -1,0 +1,59 @@
+<!doctype html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<title></title>
+<link type="text/css" href="./smoothness/jquery-ui-1.8.6.custom.css" rel="Stylesheet" />
+<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="jquery-ui-1.8.17.custom.min.js"></script>
+<script type="text/javascript" src="jquery.timeslider.js"></script>
+</head>
+<body>
+<style type="text/css">
+#activitybox{
+	position:relative;
+	width:300px;
+	top:100px;
+	margin:auto;
+	border:thin solid #ccc;
+	background-color:#EFEFEF;
+}
+#activitybox form{
+	width:300px;
+	padding:10px;
+	margin:auto;
+}
+#activitybox form label{
+	width:80px;
+	display:inline-block;
+}
+
+#activitybox form input[type=submit]{
+	right:10px;
+}
+#uiTimerSlider
+{
+    border: thin solid #ccc;
+    background-color:#FFF;
+    padding-left:10px;
+    padding-right:10px;
+    padding-bottom:10px;
+}
+#uiTimerSlider .uiSliderTitle
+{
+    font-weight:bold;
+    margin-top:5px;
+    margin-bottom:5px;
+}
+</style>
+    	<div id="activitybox">
+    		<form name="input" action="#" method="post">
+    			<label>Activity:</label> <input type="text" name="activity" /><br />
+    			<label>Time Spent:</label> <input type="text" name="timespent" id="jqueryshowtime" /><br />
+    			<input type="submit" value="Submit" />
+    		</form>
+    	</div>
+		<script type="text/javascript">
+			$('#jqueryshowtime').timeslider();
+		</script>
+</body>
+</html>
