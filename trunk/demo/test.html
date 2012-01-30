@@ -48,12 +48,13 @@
     	<div id="activitybox">
     		<form name="input" action="#" method="post">
     			<label>Activity:</label> <input type="text" name="activity" /><br />
-    			<label>Time Spent:</label> <input type="text" name="timespent" id="jqueryshowtime" /><br />
+    			<label>Time Spent:</label> <input type="text" name="timespent" id="jqueryshowtime" class="timeshow" /><br />
+    			<label>Time Lost:</label> <input type="text" name="timespent" id="jqueryshowtime2" class="timeshow" /><br />
     			<input type="submit" value="Submit" />
     		</form>
     	</div>
 		<script type="text/javascript">
-			$('#jqueryshowtime').timeslider();
+			$('.timeshow').timeslider();
 		</script>
 </body>
 </html>

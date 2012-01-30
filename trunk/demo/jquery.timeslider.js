@@ -9,8 +9,8 @@ http://code.google.com/p/timeslider/wiki/LicenseInfo
 A current version and some documentation is available at
 http://timeslider.googlecode.com/
 
-$Version: 1.0
-$Revision: 1, 2012-01-25 19:15:00$
+$Version: 1.1
+$Revision: 2, 2012-01-30 08:25:00$
 
 @depends: jquery.js
 @depends: jquery.ui.core.js
@@ -42,9 +42,8 @@ $Revision: 1, 2012-01-25 19:15:00$
                                 (options.showhours ? '<div class="uiSliderTitle">Hours</div><div id="uiHoursSlider"></div>' : '') +
                                 '<div class="uiSliderTitle">Minutes</div><div id="uiMinutesSlider"></div>' +
                                 (options.showseconds ? '<div class="uiSliderTitle">Seconds</div><div id="uiSecondsSlider"></div>' : '')));
-            $(inputobject).parent().append($('<div class="transdiv" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:' + (options.zIndex - 1) + ';"></div>'));
+            $('body').append('<div class="transdiv" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:' + (options.zIndex - 1) + ';"></div>');
             $('.transdiv').click(function () { $('#uiTimerSlider').remove(); $('.transdiv').remove(); });
-            var id = $(inputobject).attr("id");
             var sethours = function () {
                 var hoursval = (options.showhours ? $("#uiHoursSlider").slider("value").toString() : '00');
                 var minval = $("#uiMinutesSlider").slider("value").toString();
@@ -52,13 +51,13 @@ $Revision: 1, 2012-01-25 19:15:00$
                 if (hoursval.length == 1) { hoursval = '0' + hoursval; }
                 if (minval.length == 1) { minval = '0' + minval; }
                 if (secval.length == 1) { secval = '0' + secval; }
-                $('#' + id).val(hoursval + ":" + minval + ":" + secval);
+                $(inputobject).val(hoursval + ":" + minval + ":" + secval);
             };
             var hours = 0;
             var min = 0;
             var sec = 0;
-            if ($('#' + id).val() != undefined && $('#' + id).val() != "") {
-                var slitstr = $('#' + id).val().split(':');
+            if ($(inputobject).val() != undefined && $(inputobject).val() != "") {
+                var slitstr = $(inputobject).val().split(':');
                 if (!isNaN(parseInt(slitstr[0]))) {
                     hours = parseInt(slitstr[0]);
                 }
@@ -94,6 +93,7 @@ $Revision: 1, 2012-01-25 19:15:00$
                 change: sethours
             });
         }
+        
         $(this).click(
             function () {
                 triggerClick(this);
