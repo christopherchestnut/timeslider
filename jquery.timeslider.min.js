@@ -7,7 +7,7 @@ Dual licensed under the MIT or GPL Version 2 licenses.
 http://code.google.com/p/timeslider/wiki/LicenseInfo
 
 A current version and some documentation is available at
-http://timeslider.googlecode.com/
+http://christopherchestnut.github.io/timeslider
 
 $Version: 1.1
 $Revision: 2, 2012-01-30 08:25:00$
